@@ -12,14 +12,14 @@ export class ViewItemComponent implements OnInit {
   todoItems: Observable<any>;
   noItemsInList = false;
 
-  constructor(private apollo: Apollo ) { }
+  constructor(private apollo: Apollo) { }
 
   ngOnInit() {
     this.apollo.watchQuery<any>({
       query: Query.PostsGetQuery
     })
       .valueChanges
-      .subscribe(({data}) => {
+      .subscribe(({ data }) => {
         if (data.todo_list.length === 0) {
           this.noItemsInList = true;
         } else {

@@ -1,25 +1,20 @@
 <div class="container">
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" id="home-tab" routerLink="/add-item">Add Item</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" id="home-tab" routerLink="/view-item">View Item</a>
-        </li>
-      </ul>
-      <div *ngIf="noItemsInList">
-        There are no items in the list! Go add some!
-      </div>
-      <div class="tab-content container" *ngFor="let item of todoItems">
-        <table class="table">
-          <tbody>
-            <tr>
-              <th scope="row"></th>
-              <td>{{ item.text }}</td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+  <ul class="nav nav-pills nav-fill" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link" id="home-tab" routerLink="/add-item">Add Item</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" id="home-tab" routerLink="/view-item">View Item</a>
+    </li>
+  </ul>
+  <div *ngIf="noItemsInList">
+    There are no items in the list! Go add some!
+  </div>
+
+  <ul class="list-group list-item-custom" *ngFor="let item of todoItems">
+    <li class="list-group-item list-group-item-primary">{{ item.text }}
+      <span class="action-button" type="button">Mark as done.</span>
+      <span class="action-button" type="button">Delete</span>
+    </li>
+  </ul>
 </div>

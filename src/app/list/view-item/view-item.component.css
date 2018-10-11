@@ -1,0 +1,10 @@
+.list-item-custom {
+    padding: 4px;
+    max-width: 60%;
+    margin: 0 auto; 
+}
+
+.action-button {
+    padding: 5px;
+    float: right;
+}

@@ -1,14 +1,13 @@
 <div class="container">
-  <ul class="nav nav-tabs" id="myTab" role="tablist">
+  <ul class="nav nav-pills nav-fill" id="myTab" role="tablist">
     <li class="nav-item">
       <a class="nav-link active" id="home-tab" routerLink="/add-item">Add Item</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active" id="home-tab" routerLink="/view-item">View Item</a>
+      <a class="nav-link" id="home-tab" routerLink="/view-item">View Item</a>
     </li>
   </ul>
-  <div class="tab-content">
-    <form>
+  <div class="tab-content" style="padding-top:20px;">
       <div class="input-group input-group-lg">
         <div class="input-group-prepend">
           <span class="input-group-text" id="inputGroup-sizing-lg">Type here</span>
@@ -18,6 +17,5 @@
           <span class="input-group-text" id="inputGroup-sizing-lg" type="button" (click)="addItemInDB()">+</span>
         </div>
       </div>
-    </form>
   </div>
 </div>

@@ -28,10 +28,11 @@ export class AddItemComponent implements OnInit {
           }
         ]
       }
-    }).subscribe(({data}) => {
-        console.log(data);
-      }, (error) => {
-        console.log('Could not add due to ' + error );
-      });
+    }).subscribe(({ data }) => {
+      console.log(data);
+      this.someString = '';
+    }, (error) => {
+      console.log('Could not add due to ' + error);
+    });
   }
 }
