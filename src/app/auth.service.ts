@@ -49,6 +49,7 @@ export class AuthService {
     localStorage.removeItem('id_token');
     localStorage.removeItem('user_id');
     localStorage.removeItem('expires_at');
+    location.reload();
     this.router.navigate(['/']);
   }
 

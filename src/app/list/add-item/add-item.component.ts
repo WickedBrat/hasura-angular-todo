@@ -17,6 +17,7 @@ export class AddItemComponent implements OnInit {
     if (!auth.isAuthenticated()) {
       router.navigate(['/login']);
     }
+    auth.handleAuthentication();
   }
 
   ngOnInit() {
