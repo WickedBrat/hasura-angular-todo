@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AuthService } from './auth.service';
+import { GraphQLModule } from './graph-ql/graph-ql.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { AuthService } from './auth.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    GraphQLModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

@@ -13,7 +13,7 @@ export class AuthService {
     clientID: 'TKlskjJRzMQZw6JbuQ0Y8aX9nJnb01t5',
     domain: 'aossie.auth0.com',
     responseType: 'token id_token',
-    redirectUri: 'http://localhost:4202/',
+    redirectUri: 'http://localhost:4200/',
     scope: 'openid'
   });
 
@@ -39,6 +39,7 @@ export class AuthService {
   private setSession(authResult): void {
     const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
     localStorage.setItem('access_token', authResult.accessToken);
+    localStorage.setItem('user_id', authResult.idTokenPayload.sub);
     localStorage.setItem('id_token', authResult.idToken);
     localStorage.setItem('expires_at', expiresAt);
   }
