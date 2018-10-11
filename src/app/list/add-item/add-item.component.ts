@@ -9,14 +9,13 @@ import * as Query from '../../queries';
   styleUrls: ['./add-item.component.css']
 })
 export class AddItemComponent implements OnInit {
-  todoItems: Observable<any>;
-  noItemsInList = false;
   someString = '';
 
   constructor(private apollo: Apollo) { }
 
   ngOnInit() {
   }
+
   addItemInDB() {
     this.apollo.mutate<any>({
       mutation: Query.AddMutation,
@@ -29,8 +28,7 @@ export class AddItemComponent implements OnInit {
         ]
       }
     }).subscribe(({ data }) => {
-      console.log(data);
-      this.someString = '';
+      location.reload();
     }, (error) => {
       console.log('Could not add due to ' + error);
     });

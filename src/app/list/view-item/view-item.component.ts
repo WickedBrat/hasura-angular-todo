@@ -43,10 +43,8 @@ export class ViewItemComponent implements OnInit {
           'is_completed': !isCompleted
         }
       }
-    }).subscribe(({ data }) => {
-      console.log(data);
-    }, (error) => {
-      console.log('Could not add due to ' + error);
+    }).subscribe(({ data }) => {}, (error) => {
+      console.log('Could update add due to ' + error);
     });
   }
 
@@ -61,10 +59,9 @@ export class ViewItemComponent implements OnInit {
         }
       }
     }).subscribe(({ data }) => {
-      console.log(this.todoItems, data);
-      this.todoItems = this.todoItems.filter((item) => item.id !== data.delete_todo_list.returning[0].id)
+      location.reload();
     }, (error) => {
-      console.log('Could not add due to ' + error);
+      console.log('Could delete add due to ' + error);
     });
   }
 }
