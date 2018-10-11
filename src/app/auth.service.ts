@@ -13,7 +13,7 @@ export class AuthService {
     clientID: 'TKlskjJRzMQZw6JbuQ0Y8aX9nJnb01t5',
     domain: 'aossie.auth0.com',
     responseType: 'token id_token',
-    redirectUri: 'http://localhost:4200/',
+    redirectUri: 'https://hasura-angular-todo.herokuapp.com/',
     scope: 'openid'
   });
 
