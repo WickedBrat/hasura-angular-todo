@@ -1,0 +1,18 @@
+<nav class="navbar navbar-dark bg-dark mb-5">
+  <a class="navbar-brand" href="/">Hasura-Angular Todo</a>
+  <div class="navbar-expand mr-auto">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Home</a>
+    </div>
+  </div>
+  <div class="navbar-expand ml-auto navbar-nav">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" (click)="auth.login()" *ngIf="!auth.isAuthenticated()">
+        <i class="fa fa-github"></i> Login
+      </a>
+      <a class="nav-item nav-link" (click)="auth.logout()" *ngIf="auth.isAuthenticated()">
+        <i class="fa fa-twitter"></i> Logout
+      </a>
+    </div>
+  </div>
+</nav>
