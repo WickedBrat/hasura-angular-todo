@@ -1,21 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AuthService } from './auth.service';
 import { GraphQLModule } from './graph-ql/graph-ql.module';
+import { AddItemComponent } from './list/add-item/add-item.component';
+import { ViewItemComponent } from './list/view-item/view-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    AddItemComponent,
+    ViewItemComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    GraphQLModule
+    GraphQLModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
