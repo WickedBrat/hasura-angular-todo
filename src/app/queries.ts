@@ -1,14 +1,15 @@
 import gql from 'graphql-tag';
 
-export const PostsGetQuery = gql`
+export const GetQuery = gql`
 query PostsGetQuery{
   todo_list {
+      id
       text
       is_completed
     }
 }`;
 
-export const AddQuery = gql`
+export const AddMutation = gql`
     mutation insert_todo_list($objects: [todo_list_insert_input!]! ) {
         insert_todo_list(objects: $objects) {
           returning {
@@ -20,3 +21,30 @@ export const AddQuery = gql`
         }
       }
 `;
+
+export const UpdateMutation = gql `
+mutation updateMutation($where: todo_list_bool_exp!, $set: todo_list_set_input!) {
+    update_todo_list(
+      where: $where,
+      _set: $set
+    ) {
+      affected_rows
+      returning {
+        id
+        is_completed
+        text
+      }
+    }
+  }`;
+
+  export const DeleteMutation = gql `
+  mutation DeleteMutation($where: todo_list_bool_exp!) {
+      delete_todo_list(
+        where: $where
+      ) {
+        affected_rows
+        returning {
+          id
+        }
+      }
+    }`;

@@ -19,7 +19,7 @@ export class AddItemComponent implements OnInit {
   }
   addItemInDB() {
     this.apollo.mutate<any>({
-      mutation: Query.AddQuery,
+      mutation: Query.AddMutation,
       variables: {
         'objects': [
           {

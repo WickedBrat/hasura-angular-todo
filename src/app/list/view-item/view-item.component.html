@@ -12,9 +12,13 @@
   </div>
 
   <ul class="list-group list-item-custom" *ngFor="let item of todoItems">
-    <li class="list-group-item list-group-item-primary">{{ item.text }}
-      <span class="action-button" type="button">Mark as done.</span>
-      <span class="action-button" type="button">Delete</span>
+    <li class="list-group-item" [ngClass]="{'list-group-item-success': item.is_completed, 'list-group-item-danger': !item.is_completed}">{{
+      item.text }}
+      <span class="action-button " type="button" (click)="updateTodoItem(item.id, false)" *ngIf="!item.is_completed">Mark
+        as done.</span>
+      <span class="action-button" type="button" (click)="updateTodoItem(item.id, true)" *ngIf="item.is_completed">Mark
+        incomplete.</span>
+      <span class="action-button" type="button" (click)="deleteTodoItem(item.id)">Delete</span>
     </li>
   </ul>
 </div>
