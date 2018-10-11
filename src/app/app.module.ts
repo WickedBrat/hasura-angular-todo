@@ -9,6 +9,7 @@ import { AuthService } from './auth.service';
 import { GraphQLModule } from './graph-ql/graph-ql.module';
 import { AddItemComponent } from './list/add-item/add-item.component';
 import { ViewItemComponent } from './list/view-item/view-item.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ViewItemComponent } from './list/view-item/view-item.component';
     NavbarComponent,
     AddItemComponent,
     ViewItemComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

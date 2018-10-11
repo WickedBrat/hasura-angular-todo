@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import { Observable } from 'rxjs';
 import * as Query from '../../queries';
+import { AuthService } from 'src/app/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-item',
@@ -12,7 +14,11 @@ export class ViewItemComponent implements OnInit {
   todoItems: Observable<Array<any>>;
   noItemsInList = false;
 
-  constructor(private apollo: Apollo) { }
+  constructor(private apollo: Apollo, private auth: AuthService, private router: Router) {
+    if (!auth.isAuthenticated()) {
+      router.navigate(['/login']);
+    }
+  }
 
   ngOnInit() {
     this.apollo.watchQuery<any>({
